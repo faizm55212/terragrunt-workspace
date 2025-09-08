@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: boutiqueshop
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/faizm55212/boutiqueshop-helm.git
+    targetRevision: HEAD
+    path: boutiqueshop
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: applications
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-  source   = "../../terraform-bricks/k3sDocker/k3sDocker/docker-net"
+  source   = "git::https://github.com/faizm55212/terraform-bricks.git//k3sDocker/k3s-vnet?ref=master"
 }
 
 inputs = {
